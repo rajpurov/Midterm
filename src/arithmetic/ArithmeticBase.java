@@ -18,22 +18,33 @@ public class ArithmeticBase
  public double x,y;
     double calculate(double x, double y) 
         {
-        Scanner sc =new Scanner(System.in);
-        System.out.println("enter String");
-        String s= sc.next();
-        switch (s.toUpperCase()) 
-        {
-            case "PLUS":
-                return x + y;
-            case "MINUS":
-                return x - y;
-            case "TIMES":
-                return x * y;
-            case "DIVIDE":
-                return x / y;
-            default:
-                throw new AssertionError("Unknown operations " + this);
+        Scanner input =new Scanner(System.in);
+        System.out.println("Enter 1 for Addition \n"+
+                           "Enter 2 for Subtraction\n"+
+                           "Enter 3 for Multiplication\n"+
+                           "Enter 4 for Division");
+        int s = input.nextInt();
+        
+       if(s == 1)
+       {
+           return x+y;
         }
+       else if(s == 2)
+       {
+           return x-y;
+       }
+       else if(s == 3)
+       {
+           return x*y;
+       }
+       else if(s == 4)
+       {
+           return x/y;
+       }
+       else
+       {
+           throw new IllegalArgumentException("Something went wrong, Try to write string value"); 
+       }
     }
    
 }
